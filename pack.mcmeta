@@ -1,6 +1,6 @@
 {
         "pack": {
                 "pack_format": 4,
-                "description": "Holds all necessary files for Templex."
+                "description": "A World Edit Datapack for Vanilla MC in versions 1.13 and beyond."
         }
 }
