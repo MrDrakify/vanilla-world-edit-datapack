@@ -17,12 +17,20 @@ execute as @a[scores={we.pos2=1..},tag=we.perm.main] at @s run function we:pos2
 execute as @a[scores={we.pos2=1..},tag=!we.perm.main] at @s run function we-msges:ins_perms
 execute as @a[scores={we.fill=1..},tag=we.perm.main] at @s run function we:fill
 execute as @a[scores={we.fill=1..},tag=!we.perm.main] at @s run function we-msges:ins_perms
-#  Perm Commands.
-execute as @a[scores={we.permadd.admin=1..},tag=we.perm.admin] at @s run function we-pa:admin
-execute as @a[scores={we.permadd.admin=1..},tag=!we.perm.admin] at @s run function we-msges:ins_perms
-execute as @a[scores={we.permadd.edit_perms=1..},tag=we.perm.edit_perms] at @s run function we-pa:edit_perms
-execute as @a[scores={we.permadd.edit_perms=1..},tag=!we.perm.edit_perms] at @s run function we-msges:ins_perms
-execute as @a[scores={we.permadd.we_main=1..},tag=we.perm.main] at @s run function we-pa:we_main
-execute as @a[scores={we.permadd.we_main=1..},tag=we.perm.main] at @s run function we-pa:we_main
+#  Perm Add Commands.
+execute as @a[scores={we.pa.admin=1..},tag=we.perm.admin] at @s run function we-pa:admin
+execute as @a[scores={we.pa.admin=1..},tag=!we.perm.admin] at @s run function we-msges:ins_perms
+execute as @a[scores={we.pa.edit_perms=1..},tag=we.perm.edit_perms] at @s run function we-pa:edit_perms
+execute as @a[scores={we.pa.edit_perms=1..},tag=!we.perm.edit_perms] at @s run function we-msges:ins_perms
+execute as @a[scores={we.pa.we_main=1..},tag=we.perm.edit_perms] at @s run function we-pa:we_main
+execute as @a[scores={we.pa.we_main=1..},tag=!we.perm.edit_perms] at @s run function we-msges:ins_perms
+#  Perm Rem Commands.
+execute as @a[scores={we.pr.admin=1..},tag=we.perm.admin] at @s run function we-pr:admin
+execute as @a[scores={we.pr.admin=1..},tag=!we.perm.admin] at @s run function we-msges:ins_perms
+execute as @a[scores={we.pr.edit_perms=1..},tag=we.perm.edit_perms] at @s run function we-pr:edit_perms
+execute as @a[scores={we.pr.edit_perms=1..},tag=!we.perm.edit_perms] at @s run function we-msges:ins_perms
+execute as @a[scores={we.pr.we_main=1..},tag=we.perm.edit_perms] at @s run function we-pr:we_main
+execute as @a[scores={we.pr.we_main=1..},tag=!we.perm.edit_perms] at @s run function we-msges:ins_perms
 ## UUID Profiling.
 execute if entity @e[tag=we.stand,name=we.main,tag=we.profiling.true] as @p[tag=!we.uuided.true] at @s run function we:uuid_profiling
+execute if entity @e[tag=we.stand,name=we.main,tag=we.profiling.true] as @p[scores={we.uuid=0}] at @s run function we:uuid_profiling
