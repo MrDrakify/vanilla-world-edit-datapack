@@ -34,5 +34,5 @@ execute as @a[scores={we.pr.edit_perms=1..},tag=!we.perm.edit_perms] at @s run f
 execute as @a[scores={we.pr.we_main=1..},tag=we.perm.edit_perms] at @s run function we-pr:we_main
 execute as @a[scores={we.pr.we_main=1..},tag=!we.perm.edit_perms] at @s run function we-msges:ins_perms
 ## UUID Profiling.
-execute if entity @e[tag=we.stand,name=we.main,tag=we.profiling.true] as @p[tag=!we.uuided.true] at @s run function we:uuid_profiling
+execute if entity @e[tag=we.stand,name=we.main,tag=we.profiling.true] as @p[tag=!we.uuided.tagged] at @s run function we:uuid_profiling
 execute if entity @e[tag=we.stand,name=we.main,tag=we.profiling.true] as @p[scores={we.uuid=0}] at @s run function we:uuid_profiling

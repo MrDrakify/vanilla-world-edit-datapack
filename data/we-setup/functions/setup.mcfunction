@@ -42,7 +42,7 @@ scoreboard objectives add we.currblock dummy World Edit: Current Block
 scoreboard objectives add we.uuid dummy World Edit: UUID
 scoreboard objectives add we.db dummy World Edit: Database
 # WE Database Setup.
-tellraw @a [{"text":"\u00A78WE Setup \u00A78: \u00A72Setting up World Edit Database... Using X+,Z+ coordinates...","color":"dark_green"}]
+tellraw @a [{"text":"\u00A76WE Setup \u00A78: \u00A72Setting up World Edit Database... Using X+,Z+ coordinates...","color":"dark_green"}]
 execute as @e[tag=we.stand,name=we.main] run kill @s
 summon armor_stand 0 255 0 {Invisible:1b,NoGravity:1b,Invulnerable:1b,CustomName:"{\"text\":\"we.main\",\"color\":\"gold\"}",Tags:["we.stand"]}
 execute as @e[tag=we.stand,name=we.proxy1] run kill @s
@@ -50,11 +50,14 @@ summon armor_stand 1 255 0 {Invisible:1b,NoGravity:1b,Invulnerable:1b,CustomName
 execute as @e[tag=we.stand,name=we.proxy2] run kill @s
 summon armor_stand 0 255 1 {Invisible:1b,NoGravity:1b,Invulnerable:1b,CustomName:"{\"text\":\"we.proxy2\",\"color\":\"gold\"}",Tags:["we.stand"]}
 execute as @e[tag=we.stand,name=we.proxy3] run kill @s
-summon armor_stand 0 255 1 {Invisible:1b,NoGravity:1b,Invulnerable:1b,CustomName:"{\"text\":\"we.proxy3\",\"color\":\"gold\"}",Tags:["we.stand"]}
+summon armor_stand 2 255 0 {Invisible:1b,NoGravity:1b,Invulnerable:1b,CustomName:"{\"text\":\"we.proxy3\",\"color\":\"gold\"}",Tags:["we.stand"]}
 execute as @e[tag=we.stand,name=we.adminer] run kill @s
-summon armor_stand 2 255 0 {Invisible:1b,NoGravity:1b,Invulnerable:1b,CustomName:"{\"text\":\"we.adminer\",\"color\":\"gold\"}",Tags:["we.stand"]}
+summon armor_stand 1 255 1 {Invisible:1b,NoGravity:1b,Invulnerable:1b,CustomName:"{\"text\":\"we.adminer\",\"color\":\"gold\"}",Tags:["we.stand"]}
 execute as @e[tag=we.stand,name=we.playersonline] run kill @s
-summon armor_stand 2 255 0 {Invisible:1b,NoGravity:1b,Invulnerable:1b,CustomName:"{\"text\":\"we.playersonline\",\"color\":\"gold\"}",Tags:["we.stand"]}
+summon armor_stand 0 255 2 {Invisible:1b,NoGravity:1b,Invulnerable:1b,CustomName:"{\"text\":\"we.playersonline\",\"color\":\"gold\"}",Tags:["we.stand"]}
+# WE Database Bug Fixes.
+scoreboard players reset * we.uuid
+scoreboard players set @e[tag=we.stand,name=we.main] we.uuid 0
 #more to come.
 # WE Admin.
 tellraw @s [{"text":"\u00A76WE Setup \u00A78: \u00A72Setting you as a WE Admin."}]
