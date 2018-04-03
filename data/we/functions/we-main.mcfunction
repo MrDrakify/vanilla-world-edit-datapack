@@ -17,6 +17,8 @@ execute as @a[scores={we.pos2=1..},tag=we.perm.main] at @s run function we:pos2
 execute as @a[scores={we.pos2=1..},tag=!we.perm.main] at @s run function we-msges:ins_perms
 execute as @a[scores={we.fill=1..},tag=we.perm.main] at @s run function we:fill
 execute as @a[scores={we.fill=1..},tag=!we.perm.main] at @s run function we-msges:ins_perms
+execute as @a[scores={we.seealluuids=1..},tag=we.perm.main] at @s run function we:see_uuids
+execute as @a[scores={we.seealluuids=1..},tag=!we.perm.main] at @s run function we-msges:ins_perms
 #  Perm Add Commands.
 execute as @a[scores={we.pa.admin=1..},tag=we.perm.admin] at @s run function we-pa:admin
 execute as @a[scores={we.pa.admin=1..},tag=!we.perm.admin] at @s run function we-msges:ins_perms

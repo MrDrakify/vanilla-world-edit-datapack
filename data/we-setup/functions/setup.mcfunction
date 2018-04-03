@@ -7,6 +7,7 @@ scoreboard objectives add we.pos1 trigger WE: Pos1
 scoreboard objectives add we.pos2 trigger WE: Pos2
 scoreboard objectives add we.fill trigger WE: Fill
 scoreboard objectives add we.choose trigger WE: Choose
+scoreboard objectives add we.seealluuids trigger WE: See All UUIDs
 
 scoreboard objectives add we.admin.t_u_p trigger WE: Toggle UUID Profiling
 
@@ -24,6 +25,7 @@ scoreboard players enable @a we.pos1
 scoreboard players enable @a we.pos2
 scoreboard players enable @a we.fill
 scoreboard players enable @a we.choose
+scoreboard players enable @a we.seealluuids
 
 scoreboard players enable @a we.admin.t_u_p
 
@@ -47,8 +49,12 @@ execute as @e[tag=we.stand,name=we.proxy1] run kill @s
 summon armor_stand 1 255 0 {Invisible:1b,NoGravity:1b,Invulnerable:1b,CustomName:"{\"text\":\"we.proxy1\",\"color\":\"gold\"}",Tags:["we.stand"]}
 execute as @e[tag=we.stand,name=we.proxy2] run kill @s
 summon armor_stand 0 255 1 {Invisible:1b,NoGravity:1b,Invulnerable:1b,CustomName:"{\"text\":\"we.proxy2\",\"color\":\"gold\"}",Tags:["we.stand"]}
+execute as @e[tag=we.stand,name=we.proxy3] run kill @s
+summon armor_stand 0 255 1 {Invisible:1b,NoGravity:1b,Invulnerable:1b,CustomName:"{\"text\":\"we.proxy3\",\"color\":\"gold\"}",Tags:["we.stand"]}
 execute as @e[tag=we.stand,name=we.adminer] run kill @s
 summon armor_stand 2 255 0 {Invisible:1b,NoGravity:1b,Invulnerable:1b,CustomName:"{\"text\":\"we.adminer\",\"color\":\"gold\"}",Tags:["we.stand"]}
+execute as @e[tag=we.stand,name=we.playersonline] run kill @s
+summon armor_stand 2 255 0 {Invisible:1b,NoGravity:1b,Invulnerable:1b,CustomName:"{\"text\":\"we.playersonline\",\"color\":\"gold\"}",Tags:["we.stand"]}
 #more to come.
 # WE Admin.
 tellraw @s [{"text":"\u00A76WE Setup \u00A78: \u00A72Setting you as a WE Admin."}]

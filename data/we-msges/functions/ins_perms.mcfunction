@@ -1,6 +1,7 @@
 # Begin insufficient permissions file.
 # Tellers.
-tellraw @s [{"text":"\u00A76WE \u00A78: \u00A72Sorry, but you don't have the correct permissions to do this..."}]
+tellraw @s [{"text":"\u00A76WE \u00A78: \u00A72Sorry, but you don't have the correct permissions to do this...","color":"dark_green"}]
+tellraw @a[tag=we.perm.admin] [{"text":"\u00A76WE \u00A78: "},{"selector":"@s","color":"green"},{"text":" just tried to run a command they don't have access to.","color":"dark_green"}]
 # Resetters.
 scoreboard players reset @s we.pos1
 scoreboard players enable @a we.pos1
