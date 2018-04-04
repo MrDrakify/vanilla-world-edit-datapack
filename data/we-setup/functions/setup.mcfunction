@@ -1,5 +1,5 @@
 # Begin setup file.
-tellraw @a [{"text":"\u00A76WE Setup \u00A78: \u00A72Starting setup for Vanilla World Edit \u00A78[\u00A7ev0.0.1\u00A78]","color":"dark_green"}]
+tellraw @a [{"text":"\u00A76WE Setup \u00A78: \u00A72Starting setup for Vanilla World Edit \u00A78[\u00A7ev0.0.12\u00A78]","color":"dark_green"}]
 # Trigger setup.
 tellraw @a [{"text":"\u00A76WE Setup \u00A78: \u00A72Setting up triggers..."}]
 scoreboard objectives add we.help trigger WE: Help
