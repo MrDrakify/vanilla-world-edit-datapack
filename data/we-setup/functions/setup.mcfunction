@@ -41,6 +41,8 @@ tellraw @a [{"text":"\u00A76WE Setup \u00A78: \u00A72Setting up data points..."}
 scoreboard objectives add we.currblock dummy World Edit: Current Block
 scoreboard objectives add we.uuid dummy World Edit: UUID
 scoreboard objectives add we.db dummy World Edit: Database
+# WE Database Prior Bug Fixes.
+scoreboard players operation OLD_UUID we.db = @e[tag=we.stand,name=we.main] we.uuid
 # WE Database Setup.
 tellraw @a [{"text":"\u00A76WE Setup \u00A78: \u00A72Setting up World Edit Database... Using X+,Z+ coordinates...","color":"dark_green"}]
 execute as @e[tag=we.stand,name=we.main] run kill @s
@@ -53,11 +55,12 @@ execute as @e[tag=we.stand,name=we.proxy3] run kill @s
 summon armor_stand 2 255 0 {Invisible:1b,NoGravity:1b,Invulnerable:1b,CustomName:"{\"text\":\"we.proxy3\",\"color\":\"gold\"}",Tags:["we.stand"]}
 execute as @e[tag=we.stand,name=we.adminer] run kill @s
 summon armor_stand 1 255 1 {Invisible:1b,NoGravity:1b,Invulnerable:1b,CustomName:"{\"text\":\"we.adminer\",\"color\":\"gold\"}",Tags:["we.stand"]}
+execute as @e[tag=we.stand,name=we.mainer] run kill @s
+summon armor_stand 0 255 2 {Invisible:1b,NoGravity:1b,Invulnerable:1b,CustomName:"{\"text\":\"we.mainer\",\"color\":\"gold\"}",Tags:["we.stand"]}
 execute as @e[tag=we.stand,name=we.playersonline] run kill @s
-summon armor_stand 0 255 2 {Invisible:1b,NoGravity:1b,Invulnerable:1b,CustomName:"{\"text\":\"we.playersonline\",\"color\":\"gold\"}",Tags:["we.stand"]}
-# WE Database Bug Fixes.
-scoreboard players reset * we.uuid
-scoreboard players set @e[tag=we.stand,name=we.main] we.uuid 0
+summon armor_stand 3 255 0 {Invisible:1b,NoGravity:1b,Invulnerable:1b,CustomName:"{\"text\":\"we.playersonline\",\"color\":\"gold\"}",Tags:["we.stand"]}
+# WE Database Post Bug Fixes.
+scoreboard players operation @e[tag=we.stand,name=we.main] we.uuid = OLD_UUID we.db
 #more to come.
 # WE Admin.
 tellraw @s [{"text":"\u00A76WE Setup \u00A78: \u00A72Setting you as a WE Admin."}]

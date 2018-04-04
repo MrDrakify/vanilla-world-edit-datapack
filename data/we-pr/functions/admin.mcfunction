@@ -1,4 +1,4 @@
-# Begin Admin Add function.
+# Begin Admin Remove function.
 # Subtraction checking counter.
 scoreboard players add @e[tag=we.stand,name=we.adminer] we.db 1
 # Subtraction checking.
